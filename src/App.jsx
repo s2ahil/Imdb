@@ -1,18 +1,14 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "../src/components/Home"
+import MovieDetails from "./components/MovieDetails";
 
-import ItemListManager from './components/ItemListManager'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-
-
-    <>
-      <ItemListManager></ItemListManager>
-
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie/:id" element={<MovieDetails />} />
+      </Routes>
+    </Router>
+  );
 }
-
-export default App
