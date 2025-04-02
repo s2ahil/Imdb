@@ -55,7 +55,7 @@ export default function Home() {
             {loading ? (
                 <div className="mt-6 text-lg font-semibold">Loading...</div>
             ) : (
-                <div className="mt-4 grid grid-cols-3 gap-4">
+                <div className= {movies.length<1? "":"mt-4 grid grid-cols-3 gap-4"} >
                     {movies.length > 0 ? (
                         movies.map((movie) => (
                             <Link
@@ -75,7 +75,7 @@ export default function Home() {
                             </Link>
                         ))
                     ) : (
-                        <div className="mt-4">Try searching for movies⬆️</div>
+                        <div className="mt-4 w-full flex justify-center">Try searching for movies⬆️</div>
                     )}
                 </div>
             )}
